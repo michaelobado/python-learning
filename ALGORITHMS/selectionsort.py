@@ -85,5 +85,35 @@ def selectionSort(arr):
     return newArr  # Return the sorted list
 
 
-# Example usage
+#Example usage
 print(selectionSort([5, 3, 6, 2, 10]))  # Output: [2, 3, 5, 6, 10]
+
+# Another selection sort example
+
+def swap(array, startIndex, secondIndex):
+
+    temp = array[startIndex]
+    array[startIndex] = array[secondIndex]
+    array[secondIndex] = temp
+
+def indexOfMinimum(array, startIndex):
+
+    minValue = array[startIndex]
+    minIndex = startIndex
+
+    for i in range(minIndex + 1, len(array)):
+        if array[i] < minValue:
+            minIndex = i
+            minValue = array[i]
+
+    return minIndex
+
+def selectionSort(array):
+
+    for i in range(len(array) - 1):
+        minIndex = indexOfMinimum(array, i)
+        swap(array, i, minIndex)
+
+    return array
+
+print(selectionSort( [40, 20, 10, 30]))

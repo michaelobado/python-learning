@@ -75,3 +75,36 @@ unsorted_list = [3, 6, 8, 10, 1, 2, 1]
 sorted_list = quicksort(unsorted_list)
 print(sorted_list)  # Output: [1, 1, 2, 3, 6, 8, 10]
 
+def quickSort(array):
+
+    if len(array) <= 2:
+        return array
+    else:
+        pivot = array[0]
+
+        lesser = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+
+    return quickSort(lesser) + [pivot] + quickSort(greater)
+
+array = [10, 7, 8, 9, 1, 5]
+print(quickSort(array))
+
+# Using a mid element in the array as pivot
+
+def quickSort(array):
+
+    if len(array) < 2:
+        return array
+    else:
+        mid = len(array) // 2
+        pivot = array[mid]
+
+        lesser = [i for i in array if i < pivot]
+        equal = [i for i in array if i == pivot]
+        greater = [i for i in array if i > pivot]
+
+    return quickSort(lesser) + equal + quickSort(greater)
+
+array = [10, 7, 8, 9, 1, 5]
+print(quickSort(array))

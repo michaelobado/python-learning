@@ -1,3 +1,9 @@
+# Runtimes
+# Best Case: O(n^2)
+# Average Case: O(n^2)
+# Worst Case: O(n^2)
+# Space Complexity: O(1)
+
 def insertionSort(arr, rightIndex, target):
     if target in arr:
         arr.remove(target)
